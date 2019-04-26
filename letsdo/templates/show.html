@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EmployeeRecord</title>
+    {% load staticfiles  %}
+
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+    <style>
+
+    </style>
+</head>
+<body class="main">
+
+<div style="float:right">
+    <img style="width: 245px; height: 247px;" alt="GhulluMan" src="{% static 'images/gullu.jpg' %}"/>
+</div>
+
+
+<p>User Name:{{uname}}</p>
+<br>
+<p><a href="/logout">Logout</a></p>
+<center>
+<table border="1">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Enail</th>
+        <th>Employee Contact</th>
+        <th>Image</th>
+        <th>Action</th>
+    </tr>
+    <tbody>
+
+    {% for employee in employees %}
+    <tr>
+        <td>{{ employee.eid}}</td>
+        <td>{{ employee.ename}}</td>
+        <td>{{ employee.email}}</td>
+        <td>{{ employee.econtact}}</td>
+        <td><img src="../media/{{ employee.eimg}}" height="100" width="100"></td>
+        <td><img src=""></td>
+        <td>
+            <a href="/edit/{{ employee.id }}" >Edit</a>
+            <a href="/delete/{{ employee.id}}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    </center>
+<br>
+<br>
+<br>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Striped Rows</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+          <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

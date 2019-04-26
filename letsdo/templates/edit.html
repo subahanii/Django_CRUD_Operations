@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EditEmployee</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static '/style.css'  %}">
+</head>
+<body>
+<form method="post" action="/update/{{employee.id}}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <br>
+    <h3>Update Detail</h3><br>
+    <p> EmployeeId: </p><input type="text" name="eid" value="{{employee.eid}}"> <br>
+
+    <p> EmployeeName: </p><input type="text" name="ename" value="{{employee.ename}}"> <br>
+
+    <p> EmployeeEmail: </p><input type="text" name="email" value="{{employee.email}}"> <br>
+
+    <p> EmployeeContact: </p><input type="text" name="econtact" value="{{employee.econtact}}"> <br>
+    <p> Image <img src="../media/{{ employee.eimg }}" height="100" width="100"> <input type="file" name="mfile" > <br>
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>

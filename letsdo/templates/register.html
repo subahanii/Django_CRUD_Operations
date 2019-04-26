@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegisterPage</title>
+</head>
+<body>
+<center><h1 >Register Panel</h1>
+<form method="post" action="register/{{1}}" enctype="multipart/form-data">
+    {% csrf_token %}
+<table border="1">
+    <tr>
+        <td>EmployeeID</td>
+        <td><input type="text" palceholder="178204" name="eid" ></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td><input type="text" name="ename" ></td>
+    </tr>
+    <tr>
+        <td>Contact</td>
+        <td><input type="text" name="econtact" ></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="text" name="email" ></td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td><input type="password" name="epass" ></td>
+    </tr>
+    <tr>
+        <td> ImageHere:<input type="file" name="myfile"> </td>
+        <td><input type="submit" name="sub" value="Register" ></td>
+    </tr>
+
+
+</table>
+    </form>
+    <a href="/login">Already Registered</a>
+
+    </center>
+
+</body>
+</html>

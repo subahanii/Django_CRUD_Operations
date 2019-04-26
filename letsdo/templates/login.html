@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginPage</title>
+</head>
+<body>
+<center><h1 >Login Panel</h1>
+<form method="post" action="login/{{1}}">
+    {% csrf_token %}
+<table border="1">
+    <tr>
+        <td>Email</td>
+        <td><input type="text" name="email" ></td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td><input type="password" name="epass" ></td>
+    </tr>
+    <tr>
+        <td>Login</td>
+        <td><input type="submit" name="sub" value="Login" ></td>
+    </tr>
+
+
+</table>
+    </form>
+    <a href="/register">New Registeration</a>
+    </center>
+</body>
+</html>

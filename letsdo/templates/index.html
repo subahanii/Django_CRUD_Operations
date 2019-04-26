@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="#">
+</head>
+<body>
+<br>
+<center>
+<a href="login" >Login</a>
+<a href="register" >Register</a><br>
+
+<br>
+<h1>Welcome to home Page </h1>
+<h3>You can edit and delete of employee details after Loged in here!</h3>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Contact</td>
+            <td>Image</td>
+
+        </tr>
+        {% for emp in employees%}
+         <tr>
+        <td>{{ emp.eid}}</td>
+        <td>{{ emp.ename}}</td>
+        <td>{{ emp.email}}</td>
+        <td>{{ emp.econtact}}</td>
+        <td><img src="../media/{{emp.eimg}}" height="100" width="100"></td>
+    </tr>
+    {% endfor %}
+
+    </table>
+
+</form>
+    </center>
+</body>
+</html>
